@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel | M M Aduri</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>M M Aduri Admin Panel</h1>
+<p>নতুন পণ্য যোগ করুন</p>
+</header>
+
+<div style="max-width:700px;margin:20px auto;background:#fff;padding:20px;border-radius:10px;">
+
+<input type="text" id="name" placeholder="পণ্যের নাম" style="width:100%;padding:10px;margin:10px 0;">
+
+<input type="number" id="price" placeholder="দাম" style="width:100%;padding:10px;margin:10px 0;">
+
+<select id="category" style="width:100%;padding:10px;margin:10px 0;">
+<option>শার্ট</option>
+<option>পলো টি-শার্ট</option>
+<option>শাড়ি</option>
+<option>বোরখা</option>
+</select>
+
+<input type="file" id="image" style="margin:10px 0;">
+
+<button onclick="addProduct()" class="btn">
+পণ্য যোগ করুন
+</button>
+
+<h2 style="margin-top:30px;">যোগ করা পণ্য</h2>
+
+<div id="productList"></div>
+
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+  </html>
