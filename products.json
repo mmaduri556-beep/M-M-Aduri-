@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "প্রিমিয়াম শার্ট",
+    "category": "শার্ট",
+    "price": 850,
+    "image": "images/shirt1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "পলো টি-শার্ট",
+    "category": "পলো",
+    "price": 650,
+    "image": "images/polo1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "কটন শাড়ি",
+    "category": "শাড়ি",
+    "price": 1650,
+    "image": "images/saree1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "এমব্রয়ডারি বোরখা",
+    "category": "বোরখা",
+    "price": 1850,
+    "image": "images/burqa1.jpg"
+  }
+]
