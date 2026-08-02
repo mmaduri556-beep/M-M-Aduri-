@@ -1,0 +1,71 @@
+// M M Aduri Admin Panel
+
+let products = [];
+
+function addProduct() {
+    const name = document.getElementById("name").value;
+    const price = document.getElementById("price").value;
+    const category = document.getElementById("category").value;
+    const image = document.getElementById("image").files[0];
+
+    if (!name || !price) {
+        alert("পণ্যের নাম এবং দাম লিখুন");
+        return;
+    }
+
+    const product = {
+        id: Date.now(),
+        name,
+        price,
+        category,
+        image: image ? image.name : "no-image.jpg"
+    };
+
+    products.push(product);
+
+    localStorage.setItem("products", JSON.stringify(products));
+
+    showProducts();
+
+    document.getElementById("name").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("image").value = "";
+}
+
+function showProducts() {
+
+    const list = document.getElementById("productList");
+    list.innerHTML = "";
+
+    products.forEach((item, index) => {
+
+        list.innerHTML += `
+        <div class="card">
+            <h3>${item.name}</h3>
+            <p>ক্যাটাগরি: ${item.category}</p>
+            <p>দাম: ৳${item.price}</p>
+            <button onclick="deleteProduct(${index})" class="btn">
+                Delete
+            </button>
+        </div>
+        `;
+    });
+
+}
+
+function deleteProduct(index){
+    products.splice(index,1);
+    localStorage.setItem("products",JSON.stringify(products));
+    showProducts();
+}
+
+window.onload = function(){
+
+    const data = localStorage.getItem("products");
+
+    if(data){
+        products = JSON.parse(data);
+    }
+
+    showProducts();
+}
